@@ -54,8 +54,8 @@ if __name__ == "__main__":
     parser.add_argument('--title', required=False)
     args = parser.parse_args()
 
-    if args.color:
-        print("Color from command line argument =" + args.color)
+    if args.colorhexcode:
+        print("Color from command line argument =" + args.colorhexcode)
         COLOR = args.color
         if COLOR_FROM_ENV:
             print("A color was set through environment variable -" + COLOR_FROM_ENV + ". However, color from command line argument takes precendence.")
