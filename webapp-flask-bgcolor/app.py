@@ -7,12 +7,12 @@ import argparse
 app = Flask(__name__)
 
 color_codes = {
-    "#ff0000",
-    "#00ff00",
-    "#0000ff",
-    "#808000",
-    "#800080",
-    "#000080"
+    #ff0000,
+    #00ff00,
+    #0000ff,
+    #808000,
+    #800080,
+    #000080
 }
 
 SUPPORTED_COLORS = ",".join(color_codes.keys())
@@ -20,7 +20,7 @@ SUPPORTED_COLORS = ",".join(color_codes.keys())
 # Get color from Environment variable
 COLOR_FROM_ENV = os.environ.get('APP_COLORHEXCODE')
 # Generate a random color
-COLOR = random.choice(["#ff0000", "#00ff00", "#0000ff", "#808000", "#800080", "#000080"])
+COLOR = random.choice([#ff0000, #00ff00, #0000ff, #808000, #800080, #000080])
 # Get dynamic title from Environment variable
 TITLE_FROM_ENV = os.environ.get('APP_TITLE')
 # Set default title
