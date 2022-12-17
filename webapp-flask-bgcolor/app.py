@@ -56,7 +56,7 @@ if __name__ == "__main__":
 
     if args.colorhexcode:
         print("Color from command line argument =" + args.colorhexcode)
-        COLOR = args.color
+        COLOR = args.colorhexcode
         if COLOR_FROM_ENV:
             print("A color was set through environment variable -" + COLOR_FROM_ENV + ". However, color from command line argument takes precendence.")
     elif COLOR_FROM_ENV:
