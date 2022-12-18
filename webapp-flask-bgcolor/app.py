@@ -7,12 +7,12 @@ import argparse
 app = Flask(__name__)
 
 color_codes = {
-    "red": "#ff0000",
-    "green": "#00ff00",
-    "blue": "#0000ff",
-    "olive": "#808000",
-    "purple": "#800080",
-    "navy": "#000080"
+    "#ff0000",
+    "#00ff00",
+    "#0000ff",
+    "#808000",
+    "#800080",
+    "#000080"
 }
 
 SUPPORTED_COLORS = ",".join(color_codes)
