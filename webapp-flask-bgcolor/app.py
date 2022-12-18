@@ -15,7 +15,7 @@ color_codes = {
     "navy": "#000080"
 }
 
-SUPPORTED_COLORS = ",".join(color_codes.keys)
+SUPPORTED_COLORS = ",".join(color_codes)
 
 # Get color from Environment variable
 COLOR_FROM_ENV = os.environ.get('APP_COLORHEXCODE')
