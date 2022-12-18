@@ -7,15 +7,15 @@ import argparse
 app = Flask(__name__)
 
 color_codes = {
-    '#ff0000' = 'red',
-    '#00ff00' = 'green',
-    '#0000ff' = 'blue',
-    '#808000' = 'olive',
-    '#800080' = 'purple',
-    '#000080' = 'navy'
+    '#ff0000': 'red',
+    '#00ff00': 'green',
+    '#0000ff': 'blue',
+    '#808000': 'olive',
+    '#800080': 'purple',
+    '#000080': 'navy'
 }
 
-SUPPORTED_COLORS = ",".join(color_codes)
+SUPPORTED_COLORS = ",".join(color_codes.keys)
 
 # Get color from Environment variable
 COLOR_FROM_ENV = os.environ.get('APP_COLORHEXCODE')
