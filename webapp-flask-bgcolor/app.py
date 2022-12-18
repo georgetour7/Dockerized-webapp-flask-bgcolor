@@ -83,4 +83,4 @@ if __name__ == "__main__":
 
 
     # Run Flask Application
-    app.run(host="0.0.0.0", port=8000)
+    app.run(host="20.199.185.156", port=8000)
