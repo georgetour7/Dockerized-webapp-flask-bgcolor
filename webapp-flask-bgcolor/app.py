@@ -6,14 +6,14 @@ import argparse
 
 app = Flask(__name__)
 
-color_codes = [
-    '#ff0000',
-    '#00ff00',
-    '#0000ff',
-    '#808000',
-    '#800080',
-    '#000080'
-]
+color_codes = {
+    '#ff0000' = 'red',
+    '#00ff00' = 'green',
+    '#0000ff' = 'blue',
+    '#808000' = 'olive',
+    '#800080' = 'purple',
+    '#000080' = 'navy'
+}
 
 SUPPORTED_COLORS = ",".join(color_codes)
 
@@ -29,7 +29,7 @@ TITLE = "Cloud Computing - University of West Attica"
 @app.route("/")
 def main():
     # return 'Hello'
-    return render_template('index.html', name=socket.gethostname(), color=",".join(color_codes[COLOR]), colorname=COLOR, title=TITLE)
+    return render_template('index.html', name=socket.gethostname(), color=color_codes[COLOR], colorname=COLOR, title=TITLE)
 
 
 if __name__ == "__main__":
