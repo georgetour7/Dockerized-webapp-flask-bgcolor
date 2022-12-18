@@ -4,12 +4,12 @@ This is a simple flask webapp that displays a colored background and a dynamic g
 ### Dynamic Color
 The color can be specified in two different ways:
 
-  1. As a command line argument with --color as the argument. Accepts one of the following colors according the list below.
-  2. As an Environment variable APP_COLOR. Accepts one of the following colors according the list below.
+  1. As a command line argument with --colorhexcode as the argument. Accepts one of the following colors according the list below.
+  2. As an Environment variable APP_COLORHEXCODE. Accepts one of the following colors according the list below.
     
 In any other case, a random color is picked from the list below.
 
-Note 1: Accepted colors ["red", "green", "blue", "olive", "purple", "navy"]    
+Note 1: Accepted color codes ['#ff0000', '#00ff00', '#0000ff', '#808000', '#800080', '#000080']    
 Note 2: Command line argument precedes over environment variable.
 
 ### Dynamic Title
@@ -27,34 +27,34 @@ Note 3: Command line argument precedes over environment variable.
 ```bash
     -$ mkdir -p ~/MyProjects
     -$ cd ~/MyProjects
-    -$ git clone https://github.com/gregkoul/Dockerized-webapp-flask-bgcolor.git
+    -$ git clone https://github.com/georgetour7/Dockerized-webapp-flask-bgcolor.git
                       OR via SSH
-    -$ git clone git@github.com:gregkoul/Dockerized-webapp-flask-bgcolor.git
+    -$ git clone git@github.com:georgetour7/Dockerized-webapp-flask-bgcolor.git
 ```
 2. Now you have to build the Docker Image locally.
 ```bash
     -$ cd ~/MyProjects/Dockerized-webapp-flask-bgcolor
-    -$ docker build . -t gregkoul/webapp-flask-bgcolor:2.0
+    -$ docker build . -t georgetour7/webapp-flask-bgcolor:2.0
 ```
 3. Now you have to spin up as many containers you want in different ports.
 
 Random color and Static title without any command line argument nor environmental variable.
 ```bash
-    -$ docker run -p 8002:8000 gregkoul/webapp-flask-bgcolor:2.0
+    -$ docker run -p 8002:8000 georgetour7/webapp-flask-bgcolor:2.0
 ```
 Blue color with environmental variable and the Static title:
 ```bash
-    -$ docker run -p 8000:8000 -e APP_COLOR=blue gregkoul/webapp-flask-bgcolor:2.0
+    -$ docker run -p 8000:8000 -e APP_COLORHEXCODE=#0000ff georgetour7/webapp-flask-bgcolor:2.0
 ```
 Navy color with command line argument and the static title:
 ```bash
-    -$ docker run -p 8001:8000 gregkoul/webapp-flask-bgcolor:2.0 --color=navy
+    -$ docker run -p 8001:8000 georgetour7/webapp-flask-bgcolor:2.0 --colorhexcode=#000080
 ```
 Red color and Dynamic title with environmental variables:
 ```bash
-    -$ docker run -p 8003:8000 -e APP_COLOR=red -e APP_COLOR="Test Title" gregkoul/webapp-flask-bgcolor:2.0
+    -$ docker run -p 8003:8000 -e APP_COLORHEXCODE=#ff0000 -e APP_TITLE="Test Title" georgetour7/webapp-flask-bgcolor:2.0
 ```
 Olive color and Dynamic title with command line arguments:
 ```bash
-    -$ docker run -p 8004:8000 gregkoul/webapp-flask-bgcolor:2.0 --color=navy --title="Test Title"
+    -$ docker run -p 8004:8000 georgetour7/webapp-flask-bgcolor:2.0 --colorhexcode=#808000 --title="Test Title"
 ```
